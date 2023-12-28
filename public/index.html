@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" Î>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico"/>
+    <link rel="shortcut icon" href="ap.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= BASE_URL %>ap144.png">
+        <!--适用于 Retina 屏的 iPhone-->
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= BASE_URL %>ap.png">
+        <!--适用于非 Retina 屏的 iPad-->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%= BASE_URL %>ap72.png">
+        <!--适用于非 Retina 屏的 iPhone-->
+        <link rel="apple-touch-icon-precomposed" href="<%= BASE_URL %>ap57.png">
+    <title>JPEX</title>
+    <script type="text/javascript" src="//at.alicdn.com/t/font_2302506_dgub43s9y0e.js"></script>
+    <script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="tradeview/datafeeds/udf/dist/bundle.js"> </script>
+    <script src="tradeview/charting_library/charting_library.min.js"></script>
+    <script src="tradeview/datafeeds/udf/dist/polyfills.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em; height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>
