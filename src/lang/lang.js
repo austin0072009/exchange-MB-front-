@@ -8,6 +8,10 @@ import jp from './jp'
 import hk from './hk'
 import spa from './spa'
 import de from './de'
+import ind from './ind'
+import th from './th'
+import mls from './mls'
+import vn from './vn'
 
 let locale = window.localStorage.getItem('locale') || '';
 if(locale == ''){
@@ -23,6 +27,10 @@ export default new VueI18n({
     kr:kr,
     jp:jp,
     hk:hk,
-    de:de
+    de:de,
+    ind:ind,
+    th:th,
+    mls:mls,
+    vn:vn,
   }
 })

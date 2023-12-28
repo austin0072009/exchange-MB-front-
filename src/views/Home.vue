@@ -27,6 +27,18 @@
 			 <div v-if="lang=='de'">
 			   <img src="../assets/ico/de.png" class="indexico ico_lanbig">
 			 </div>
+       	<div v-if="lang=='th'">
+			   <img src="../assets/ico/th.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='ind'">
+			   <img src="../assets/ico/ind.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='vn'">
+			   <img src="../assets/ico/vn.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='mls'">
+			   <img src="../assets/ico/mls.png" class="indexico ico_lanbig">
+			 </div>
           </mu-button>
 		  
 		  
@@ -42,6 +54,12 @@
                     <img src="../assets/ico/tw.png" class="indexico ico_lanx" v-if="item.lang=='hk'">
                     <img src="../assets/ico/jp.png" class="indexico ico_lanx" v-if="item.lang=='jp'">
                     <img src="../assets/ico/de.png" class="indexico ico_lanx" v-if="item.lang=='de'">
+                    <img src="../assets/ico/th.png" class="indexico ico_lanx" v-if="item.lang=='th'">
+                    <img src="../assets/ico/mls.png" class="indexico ico_lanx" v-if="item.lang=='mls'">
+                    <img src="../assets/ico/vn.png" class="indexico ico_lanx" v-if="item.lang=='vn'">
+                    <img src="../assets/ico/ind.png" class="indexico ico_lanx" v-if="item.lang=='ind'">
+
+                    
                   </mu-avatar>
                 </mu-list-item-action>
                 <mu-list-item-title :class="{'active':lang==item.lang}">{{ item.text }}</mu-list-item-title>
@@ -97,6 +115,27 @@ export default {
           text: this.$t('lang.kr'),
           lang: 'kr'
         },
+                {
+          src: require('@/assets/th.png'),
+          text: this.$t('lang.th'),
+          lang: 'th'
+        },
+                {
+          src: require('@/assets/vn.png'),
+          text: this.$t('lang.vn'),
+          lang: 'vn'
+        },
+                {
+          src: require('@/assets/mls.png'),
+          text: this.$t('lang.mls'),
+          lang: 'mls'
+        },
+                {
+          src: require('@/assets/ind.png'),
+          text: this.$t('lang.ind'),
+          lang: 'ind'
+        },
+        
         // {
         //   src: require('@/assets/de.png'),
         //   text: this.$t('lang.de'),
