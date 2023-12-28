@@ -88,7 +88,7 @@
         <mu-card v-if="showInfo.is_reply===1" class="right" style="width: 100%; max-width: 375px; margin: 10px auto;">
 
           <mu-card-text v-html="'<i class=\'currency_title\'>Reply: </i>'+nl2br(showInfo.reply_content)"></mu-card-text>
-          <mu-card-header right title="FTX Team" :sub-title="showInfo.reply_time">
+          <mu-card-header right title="JPEX Team" :sub-title="showInfo.reply_time">
 
           </mu-card-header>
 

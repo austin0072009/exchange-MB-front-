@@ -1,5 +1,5 @@
 export default {
-    "siteName": "FTX",
+    "siteName": "JPEX",
     "scan": "掃一掃",
     "wait":"敬請期待",
     "exchangeRate": "匯率",
@@ -129,9 +129,9 @@ export default {
         "xieyi": "用戶協議",
         "yinsi": "隱私條款",
         "legal": "法律聲明",
-        "email_info": "官方郵箱：：huobi@FTX.vip",
+        "email_info": "官方郵箱：：huobi@JPEX.vip",
         "email_pre": "客服：",
-        "address": "新加坡© 2013-2020 FTX",
+        "address": "新加坡© 2013-2020 JPEX",
         "feilv": "交易費率",
         "notice": "公告中心",
         "nhelp": "新手幫助",
