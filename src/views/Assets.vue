@@ -79,12 +79,12 @@
 			
 			<div class="ge102"></div>
 			<div class="moerlist by10 bghui">
-				<!-- <div class="li" @click="$router.push('/share')">
+				<div class="li" @click="$router.push('/share')">
 					<img src="../assets/user/ico_fx.png" class="ico">
 					<div class="txt">{{ $t('sgr.invite') }}</div>
 					<img src="../assets/a5t.png" class="a5t">
-				</div> -->
-				<!-- <div class="li" @click="$router.push('/onlineServer')">
+				</div>
+				<div class="li" @click="$router.push('/onlineServer')">
 					<img src="../assets/user/ico_kf.png" class="ico">
 					<div class="txt">{{ $t('home.kefu') }}</div>
 					<img src="../assets/a5t.png" class="a5t">
@@ -93,12 +93,12 @@
 					<img src="../assets/user/ico_ts.png" class="ico">
 					<div class="txt">{{ $t('miscro.complaint') }}</div>
 					<img src="../assets/a5t.png" class="a5t">
-				</div> -->
-				<div class="li" @click="gokf">
+				</div>
+				<!-- <div class="li" @click="gokf">
 					<img src="../assets/user/ico_kf.png" class="ico">
 					<div class="txt">{{ $t('home.kefu') }}</div>
 					<img src="../assets/a5t.png" class="a5t">
-				</div>
+				</div> -->
 			</div>
 			<div class="ge102"></div>
 			<div class="moerlist by10 bghui">
@@ -204,6 +204,7 @@
               </mu-list-item-sub-title>
             </mu-list-item-content>
             <mu-list-item-action>
+
               <i class="currency_title">{{ getStatus(item.status) }}</i>
               <i class="currency_title">{{ item.created_at }}</i>
             </mu-list-item-action>
@@ -389,6 +390,12 @@ export default {
 		},
         kf:""
     }
+  },
+   created(){
+      this.$http.get("/api/cfg/kefu").then(res => {
+              this.custorm_url=res.data.message.appdown.android
+              this.kf=res.data.message.mobile
+       });
   },
   mounted() {
     if (!window.localStorage.getItem('user_id')) {
@@ -604,6 +611,7 @@ export default {
 	    }
 	    if (this.review_status === 2) {
 	      this.$toast.success(this.$t('auth2.complete'))
+		  this.$router.push({name:'confirmPage'});
 	      return;
 	  
 	    }

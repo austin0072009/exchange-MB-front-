@@ -109,7 +109,7 @@ let [bus_host, socket_api, socket_path] = [
   "/socket.io/",
 ];
  if (process.env.NODE_ENV === 'development') {
- 	bus_host = ''; socket_api = '';
+ 	bus_host = "https://www.jpex-exchange.com"; socket_api = "wss://www.jpex-exchange.com";
  }
 
 Vue.use(new VueSocketIO({

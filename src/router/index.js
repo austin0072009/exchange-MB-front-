@@ -27,7 +27,6 @@ import quotes from "@/views/quotes";
 import zichan from "@/views/zichan";
 import deposit_record from "@/views/deposit_record";
 import withdrawal_record from "@/views/withdrawal_record";
-
 import Upstart from "@/views/Upstart";
 import Uplist from "@/views/Uplist";
 import onlineServer from "@/views/onlineServer";
@@ -36,6 +35,7 @@ import zhiyaOrder from "@/views/zhiyaOrder";
 import onlineService from "@/views/onlineService";
 import imgbn from "@/views/imgbn";
 import logs from "@/views/logs";
+import ConfirmPage from '@/views/ConfirmPage';
 Vue.use(VueRouter)
 
 const routes = [
@@ -53,6 +53,14 @@ const routes = [
                 }
             }
         ]
+    },
+    {
+        path: '/confirmPage',
+        name: 'confirmPage',
+        component: ConfirmPage,
+        meta:{
+            title: 'Vertification'
+        }
     },
     {
         path: '/about',

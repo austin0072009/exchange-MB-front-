@@ -95,6 +95,11 @@ export default {
         //   text: this.$t('lang.zh'),
         //   lang: 'zh'
         // },
+                {
+          src: require('@/assets/en.png'),
+          text: this.$t('lang.en'),
+          lang: 'en'
+        },
         {
           src: require('@/assets/jp.png'),
           text: this.$t('lang.jp'),
@@ -105,11 +110,7 @@ export default {
           text: this.$t('lang.hk'),
           lang: 'hk'
         },
-        {
-          src: require('@/assets/en.png'),
-          text: this.$t('lang.en'),
-          lang: 'en'
-        },
+
         {
           src: require('@/assets/han.png'),
           text: this.$t('lang.kr'),

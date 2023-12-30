@@ -2,7 +2,7 @@
   <div class="wrap" style="padding:20px;">
     <div style="height: 50px;" class="flex alcenter">
       <mu-button ref="buttona" icon @click="openLanguage = !openLanguage">
-			<div v-if="lang=='en'">
+		<div v-if="lang=='en'">
 			   <img src="../assets/ico/en.png" class="indexico ico_lanbig">
 			 </div>
 			 <div v-if="lang=='jp'">
@@ -20,18 +20,34 @@
 			 <div v-if="lang=='de'">
 			   <img src="../assets/ico/de.png" class="indexico ico_lanbig">
 			 </div>
+       	<div v-if="lang=='th'">
+			   <img src="../assets/ico/th.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='ind'">
+			   <img src="../assets/ico/ind.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='vn'">
+			   <img src="../assets/ico/vn.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='mls'">
+			   <img src="../assets/ico/mls.png" class="indexico ico_lanbig">
+			 </div>
       </mu-button>
       <mu-popover class="popforlang" :open.sync="openLanguage" :trigger="trigger">
         <mu-list>
           <mu-list-item @click="changeLang(item.lang)" class="flex alcenter" avatar button v-for="item in langArr">
             <mu-list-item-action>
               <mu-avatar size="20" style="border-radius: 0; background: none;">
-                <img src="../assets/ico/en.png" class="indexico ico_lanx" v-if="item.lang=='en'">
-				<img src="../assets/ico/zh.png" class="indexico ico_lanx" v-if="item.lang=='zh'">
-				<img src="../assets/ico/kr.png" class="indexico ico_lanx" v-if="item.lang=='kr'">
-				<img src="../assets/ico/tw.png" class="indexico ico_lanx" v-if="item.lang=='hk'">
-				<img src="../assets/ico/jp.png" class="indexico ico_lanx" v-if="item.lang=='jp'">
-				<img src="../assets/ico/de.png" class="indexico ico_lanx" v-if="item.lang=='de'">
+      <img src="../assets/ico/en.png" class="indexico ico_lanx" v-if="item.lang=='en'">
+                    <img src="../assets/ico/zh.png" class="indexico ico_lanx" v-if="item.lang=='zh'">
+                    <img src="../assets/ico/kr.png" class="indexico ico_lanx" v-if="item.lang=='kr'">
+                    <img src="../assets/ico/tw.png" class="indexico ico_lanx" v-if="item.lang=='hk'">
+                    <img src="../assets/ico/jp.png" class="indexico ico_lanx" v-if="item.lang=='jp'">
+                    <img src="../assets/ico/de.png" class="indexico ico_lanx" v-if="item.lang=='de'">
+                    <img src="../assets/ico/th.png" class="indexico ico_lanx" v-if="item.lang=='th'">
+                    <img src="../assets/ico/mls.png" class="indexico ico_lanx" v-if="item.lang=='mls'">
+                    <img src="../assets/ico/vn.png" class="indexico ico_lanx" v-if="item.lang=='vn'">
+                    <img src="../assets/ico/ind.png" class="indexico ico_lanx" v-if="item.lang=='ind'">
               </mu-avatar>
             </mu-list-item-action>
             <mu-list-item-title :class="{'active':lang==item.lang}">{{ item.text }}</mu-list-item-title>

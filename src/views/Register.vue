@@ -20,18 +20,34 @@
 			 <div v-if="lang=='de'">
 			   <img src="../assets/ico/de.png" class="indexico ico_lanbig">
 			 </div>
+       	<div v-if="lang=='th'">
+			   <img src="../assets/ico/th.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='ind'">
+			   <img src="../assets/ico/ind.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='vn'">
+			   <img src="../assets/ico/vn.png" class="indexico ico_lanbig">
+			 </div>
+			 <div v-if="lang=='mls'">
+			   <img src="../assets/ico/mls.png" class="indexico ico_lanbig">
+			 </div>
 		</mu-button>
 		<mu-popover class="popforlang" :open.sync="openLanguage" :trigger="trigger">
 		  <mu-list>
 		    <mu-list-item @click="changeLang(item.lang)" class="flex alcenter" avatar button v-for="item in langArr">
 		      <mu-list-item-action>
 		        <mu-avatar size="20" style="border-radius: 0; background: none;">
-					<img src="../assets/ico/en.png" class="indexico ico_lanx" v-if="item.lang=='en'">
-					<img src="../assets/ico/zh.png" class="indexico ico_lanx" v-if="item.lang=='zh'">
-					<img src="../assets/ico/kr.png" class="indexico ico_lanx" v-if="item.lang=='kr'">
-					<img src="../assets/ico/tw.png" class="indexico ico_lanx" v-if="item.lang=='hk'">
-					<img src="../assets/ico/jp.png" class="indexico ico_lanx" v-if="item.lang=='jp'">
-					<img src="../assets/ico/de.png" class="indexico ico_lanx" v-if="item.lang=='de'">
+                    <img src="../assets/ico/en.png" class="indexico ico_lanx" v-if="item.lang=='en'">
+                    <img src="../assets/ico/zh.png" class="indexico ico_lanx" v-if="item.lang=='zh'">
+                    <img src="../assets/ico/kr.png" class="indexico ico_lanx" v-if="item.lang=='kr'">
+                    <img src="../assets/ico/tw.png" class="indexico ico_lanx" v-if="item.lang=='hk'">
+                    <img src="../assets/ico/jp.png" class="indexico ico_lanx" v-if="item.lang=='jp'">
+                    <img src="../assets/ico/de.png" class="indexico ico_lanx" v-if="item.lang=='de'">
+                    <img src="../assets/ico/th.png" class="indexico ico_lanx" v-if="item.lang=='th'">
+                    <img src="../assets/ico/mls.png" class="indexico ico_lanx" v-if="item.lang=='mls'">
+                    <img src="../assets/ico/vn.png" class="indexico ico_lanx" v-if="item.lang=='vn'">
+                    <img src="../assets/ico/ind.png" class="indexico ico_lanx" v-if="item.lang=='ind'">
 		        </mu-avatar>
 		      </mu-list-item-action>
 		      <mu-list-item-title :class="{'active':lang==item.lang}">{{ item.text }}</mu-list-item-title>
@@ -77,9 +93,9 @@
 		                     :action-click="() => (visibilityre = !visibilityre)" :type="visibilityre ? 'text' : 'password'"
 		                     prop="repwd"></mu-text-field>
 		    </mu-form-item>
-		    <mu-form-item :label="$t('register.invitecode')" prop="invitecode">
+		    <!-- <mu-form-item :label="$t('register.invitecode')" prop="invitecode">
 		      <mu-text-field v-model="validateForm.invitecode" prop="invitecode"></mu-text-field>
-		    </mu-form-item>
+		    </mu-form-item> -->
 			<mu-form-item prop="isAgree">
 			  <mu-checkbox size="12" :label="$t('register.agree')" v-model="validateForm.isAgree"></mu-checkbox>
 			  {{ $t('register.mian') }}
@@ -242,10 +258,10 @@ export default {
     },
     register() {
 		//console.log(this.validateForm.area_code)
-      if (this.validateForm.invitecode.length < 0) {
-        this.$toast.error(this.$t('register.invitecode'));
-        return;
-      }
+      // if (this.validateForm.invitecode.length < 0) {
+      //   this.$toast.error(this.$t('register.invitecode'));
+      //   return;
+      // }
 
       if (this.validateForm.logpwd.length < 0) {
         this.$toast.error(this.$t('register.logpwd'));
@@ -272,7 +288,7 @@ export default {
       data.code = that.validateForm.code;
       data.password = that.validateForm.logpwd;
       data.re_password = that.validateForm.repwd;
-      data.extension_code = that.validateForm.invitecode;
+      // data.extension_code = that.validateForm.invitecode;
 		let loading=this.$loading();
       that.$http({
         url: "/api/user/register",
