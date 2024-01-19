@@ -535,5 +535,6 @@
     "address": "转出地址",
     "capic": "交易截图",
     "submit": "提交充值申请"
-  }
+  },
+  "td.pricedeal": "td.pricedeal"
 }

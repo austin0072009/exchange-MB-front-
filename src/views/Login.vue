@@ -119,10 +119,10 @@ export default {
           text: this.$t('lang.zh'),
           lang: 'zh'
         },*/
-        {
-          src: require('@/assets/zh.png'),
-          text: this.$t('lang.hk'),
-          lang: 'hk'
+             {
+          src: require('@/assets/en.png'),
+          text: this.$t('lang.en'),
+          lang: 'en'
         },
         {
           src: require('@/assets/jp.png'),
@@ -130,15 +130,37 @@ export default {
           lang: 'jp'
         },
         {
-          src: require('@/assets/en.png'),
-          text: this.$t('lang.en'),
-          lang: 'en'
+          src: require('@/assets/zh.png'),
+          text: this.$t('lang.hk'),
+          lang: 'hk'
         },
+
         {
           src: require('@/assets/han.png'),
           text: this.$t('lang.kr'),
           lang: 'kr'
         },
+                {
+          src: require('@/assets/th.png'),
+          text: this.$t('lang.th'),
+          lang: 'th'
+        },
+                {
+          src: require('@/assets/vn.png'),
+          text: this.$t('lang.vn'),
+          lang: 'vn'
+        },
+                {
+          src: require('@/assets/mls.png'),
+          text: this.$t('lang.mls'),
+          lang: 'mls'
+        },
+                {
+          src: require('@/assets/ind.png'),
+          text: this.$t('lang.ind'),
+          lang: 'ind'
+        },
+        
         // {
         //   src: require('@/assets/de.png'),
         //   text: this.$t('lang.de'),

@@ -1,5 +1,7 @@
 {
-  "dl":{"title":"다운로드 하 다."},
+  "dl": {
+    "title": "다운로드 하 다."
+  },
   "footer": {
     "home": "지수.",
     "quotation": "시세.",
@@ -531,10 +533,11 @@
     "legalAccountBalance": "법정 통화 계좌 잔액"
   },
   "tran": {
-  "number": "충전 수량",
-  "hash": "충전 hash",
-  "address": "주소 전송",
-  "capic": "거래 화면 캡 처",
-  "submit": "충전 신청 을 제출 하 다"
-}
+    "number": "충전 수량",
+    "hash": "충전 hash",
+    "address": "주소 전송",
+    "capic": "거래 화면 캡 처",
+    "submit": "충전 신청 을 제출 하 다"
+  },
+  "td.pricedeal": "td.pricedeal"
 }

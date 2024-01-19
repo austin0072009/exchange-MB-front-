@@ -170,26 +170,48 @@ export default {
 		    text: this.$t('lang.zh'),
 		    lang: 'zh'
 		  },*/
-		  {
-		    src: require('@/assets/zh.png'),
-		    text: this.$t('lang.hk'),
-		    lang: 'hk'
-		  },
-		  {
-		    src: require('@/assets/jp.png'),
-		    text: this.$t('lang.jp'),
-		    lang: 'jp'
-		  },
-		  {
-		    src: require('@/assets/en.png'),
-		    text: this.$t('lang.en'),
-		    lang: 'en'
-		  },
-		  {
-		    src: require('@/assets/han.png'),
-		    text: this.$t('lang.kr'),
-		    lang: 'kr'
-		  },
+		           {
+          src: require('@/assets/en.png'),
+          text: this.$t('lang.en'),
+          lang: 'en'
+        },
+        {
+          src: require('@/assets/jp.png'),
+          text: this.$t('lang.jp'),
+          lang: 'jp'
+        },
+        {
+          src: require('@/assets/zh.png'),
+          text: this.$t('lang.hk'),
+          lang: 'hk'
+        },
+
+        {
+          src: require('@/assets/han.png'),
+          text: this.$t('lang.kr'),
+          lang: 'kr'
+        },
+                {
+          src: require('@/assets/th.png'),
+          text: this.$t('lang.th'),
+          lang: 'th'
+        },
+                {
+          src: require('@/assets/vn.png'),
+          text: this.$t('lang.vn'),
+          lang: 'vn'
+        },
+                {
+          src: require('@/assets/mls.png'),
+          text: this.$t('lang.mls'),
+          lang: 'mls'
+        },
+                {
+          src: require('@/assets/ind.png'),
+          text: this.$t('lang.ind'),
+          lang: 'ind'
+        },
+        
 		  // {
 		  //   src: require('@/assets/de.png'),
 		  //   text: this.$t('lang.de'),
@@ -288,7 +310,8 @@ export default {
       data.code = that.validateForm.code;
       data.password = that.validateForm.logpwd;
       data.re_password = that.validateForm.repwd;
-      // data.extension_code = that.validateForm.invitecode;
+      if(that.validateForm.invitecode){
+       data.extension_code = that.validateForm.invitecode;}
 		let loading=this.$loading();
       that.$http({
         url: "/api/user/register",

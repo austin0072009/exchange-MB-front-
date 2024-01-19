@@ -1,5 +1,7 @@
 {
-  "dl":{"title":"アプリのダウンロード"},
+  "dl": {
+    "title": "アプリのダウンロード"
+  },
   "footer": {
     "home": "最初のページ",
     "quotation": "相場",
@@ -530,12 +532,13 @@
     "leverAccountBalance": "契約口座残高",
     "legalAccountBalance": "仏貨口座残高"
   },
-  "tran":{
+  "tran": {
     "submit": "クリックして提出します",
-    "hash":"取引のハッシュ",
-    "address_info":"*両替の住所を記入（必ず記入）",
+    "hash": "取引のハッシュ",
+    "address_info": "*両替の住所を記入（必ず記入）",
     "address": "ウォレットの住所",
     "number": "チャージ数量",
     "capic": "振替スクリーンショット"
-  }
+  },
+  "td.pricedeal": "td.pricedeal"
 }

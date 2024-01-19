@@ -3,14 +3,14 @@
     <div class="header" style="padding-right: 20px;">
       <div style="flex:1;"><h3 style="font-size: 18px;">
         {{ trade === 1 ? $t('lever.transaction') : $t('miscro.transaction') }}</h3></div>
-      <!-- <div class="flex alcenter" @click="trade = trade === 2?1:2">
+      <div class="flex alcenter" @click="trade = trade === 2?1:2">
         <mu-button @click="" icon>
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-qiehuan1"></use>
           </svg>
         </mu-button>
         <a class="subtitle bold">{{ trade === 2 ? $t('lever.transaction') : $t('miscro.transaction') }}</a>
-      </div> -->
+      </div>
     </div>
     <div class="container-my" style="overflow: auto">
       <div class="flex alcenter" style="padding-left: 5px;">
@@ -134,11 +134,8 @@
               </div>
             </div>
             <div>
-              <!-- <mu-button class="mt5" @click="openAlert=true" :color="tradeMode==='buy'?'success':'error'" full-width>
-                {{ tradeMode == 'buy' ? $t('lever.domore') : $t('lever.doshort') }} {{ currency_name }}
-              </mu-button> -->
               <mu-button class="mt5" @click="openAlert=true" :color="tradeMode==='buy'?'success':'error'" full-width>
-                {{$t("zhiya.确认订单")}}
+                {{ tradeMode == 'buy' ? $t('lever.domore') : $t('lever.doshort') }} {{ currency_name }}
               </mu-button>
             </div>
           </div>
@@ -164,13 +161,12 @@
               </mu-select>
             </div>
             <div class="flex all">
-             <!-- <mu-auto-complete :data="secondsNumbers"
+              <mu-auto-complete :data="secondsNumbers"
                                 :color="tradeMode==='buy'?'success':'error'" :label="$t('miscro.num')"
                                 :suffix="secondModes[secondsMoneyMode].name" :max-search-results="6" v-model="tsnumber"
                                 open-on-focus>
-              </mu-auto-complete> -->
-<div class="mu-input  has-label no-empty-state"><div class="mu-input-label">{{$t('miscro.num')}}</div>
-<div class="mu-text-field mu-input-content"><input tabindex="0" class="mu-text-field-input"  v-model="tsnumber"><span class="mu-input-suffix-text">USDT</span><div><div class="mu-input-line"></div><div class="mu-input-focus-line "></div></div></div></div>
+              </mu-auto-complete>
+
 
             </div>
             <div class="flex all mb15">
@@ -193,11 +189,8 @@
               </div>
             </div>
             <div class="mt5">
-              <!-- <mu-button class="mt10" @click="openAlert=true" :color="tradeMode==='buy'?'success':'error'" full-width>
-                {{ tradeMode === 'buy' ? $t('miscro.up') : $t('miscro.down') }} {{ currency_name }}
-              </mu-button> -->
               <mu-button class="mt10" @click="openAlert=true" :color="tradeMode==='buy'?'success':'error'" full-width>
-                {{$t("zhiya.确认订单")}}
+                {{ tradeMode === 'buy' ? $t('miscro.up') : $t('miscro.down') }} {{ currency_name }}
               </mu-button>
             </div>
           </div>
@@ -843,8 +836,7 @@
                   parseInt((activeOrder.endTime - Date.parse(new Date())) / 1000)
                 }}
               </div>
-              <div class="display-remain-time2">{{$t("lever.nowPrice")}}</div>
-              <!-- 现价 -->
+              <div class="display-remain-time2">现价</div>
               <div class="display-remain-time3">{{ newData | numberFixed }}</div>
               <!-- <button class="play" id="pause"></button> -->
             </div>
@@ -971,11 +963,10 @@
           tradeMode === 'buy' ? $t('lever.domore') : $t('lever.doshort')
         }}
       </mu-button>
-      <!-- <mu-button slot="actions" v-if="trade===2" flat :color="tradeMode === 'buy'?'green':'red'" @click="buySecond">{{
+      <mu-button slot="actions" v-if="trade===2" flat :color="tradeMode === 'buy'?'green':'red'" @click="buySecond">{{
           tradeMode === 'buy' ? $t('miscro.up') : $t('miscro.down')
         }}
-      </mu-button> -->
-      <mu-button slot="actions" v-if="trade===2" flat :color="tradeMode === 'buy'?'green':'red'" @click="buySecond">{{$t("zhiya.确定")}}</mu-button>
+      </mu-button>
     </mu-dialog>
 
     <mu-dialog title="Tips" width="600" max-width="80%" :esc-press-close="false"
@@ -1276,14 +1267,11 @@
 import Footer from "@/components/Footer";
 import getUrlKey from "@/lib/getUrlKey";
 
-import mixin from "@/mixin";
 export default {
-	mixins: [mixin],
   name: "Trade",
   data() {
     return {
       activeOrder: {},
-      name:"",
       wholeTime: 100,
       openAlert: false,
       openPing: false,
@@ -1296,7 +1284,7 @@ export default {
       lossPriceY: 0,
       pingId: 0,
       cancelId: 0,
-      trade:2,
+      trade: 1,
       docked: false,
       open: false,
       openTradeMode: false,
@@ -1705,18 +1693,18 @@ export default {
                 that.tradeAmount = (bond * share * shareNum).toFixed(4);
                 that.fee = tradeFreeValue;
                 that.bons = bondsValue;
-                //console.log(that.tradeAmount, that.fee, that.bons);
+                console.log(that.tradeAmount, that.fee, that.bons);
               } else {
                 that.tradeAmount = (bond * share * shareNum).toFixed(4);
                 that.fee = tradeFreeValue;
                 that.bons = bondsValue;
-                //console.log(that.tradeAmount, that.fee, that.bons);
+                console.log(that.tradeAmount, that.fee, that.bons);
               }
             }
           }
         }
       }).catch(error => {
-        //console.log(error);
+        console.log(error);
       });
     },
     getListContent() {
@@ -1860,13 +1848,13 @@ loading.close();
           eventBus.$emit("tocel", "updata");
           eventBus.$emit("to_leverExchange", "leverExchange");
           // that.buy_sell(that.legal_id,that.currency_id)
-          that.$toast.success(that.fanyi(res.data.message));
+          that.$toast.success(res.data.message);
 
         } else {
-          that.$toast.error(that.fanyi(res.data.message));
+          that.$toast.error(res.data.message);
         }
       }).catch(error => {
-        //console.log(error);
+        console.log(error);
 
         that.openAlert = false;
       });
@@ -1906,13 +1894,9 @@ loading.close();
         // this.activeOrder = res.data.message;
         if (res.data.type == "ok") {
 			that.miscroOrder = res.data.message;
-			let mcat=that.miscroOrder.created_at;
-			mcat=new Date(mcat.replace(/-/g, "/")).getTime()
-			//alert("3="+mcat)
-			that.miscroOrder.endTime = mcat + that.miscroOrder.seconds * 1000;
-			//that.miscroOrder.endTime = new Date(that.miscroOrder.created_at).getTime() + that.miscroOrder.seconds * 1000;
+			that.miscroOrder.endTime = new Date(that.miscroOrder.created_at).getTime() + that.miscroOrder.seconds * 1000;
 			that.$toast.success(that.$t("miscro.success"));
-            that.showWind1(that.miscroOrder); //显示倒计时
+          //that.showWind1(that.miscroOrder);
           that.getSeconds();
           that.getSListContent();
         } else {
@@ -1921,26 +1905,22 @@ loading.close();
 			}else if(res.data.message=="Abnormal change balance of wallet"){
 				that.$toast.error(that.$t("diy.钱包变更余额异常"));
 			}else{
-				that.$toast.error(that.fanyi(res.data.message));
+				that.$toast.error(res.data.message);
 			}
           
         }
       });
     },
     showWind() {
-      if (this.timer !== null) {
-        clearInterval(this.timer);
-        this.timer = null;
-        this.showMicroWind = true;
-      }
+      // if (this.timer !== null) {
+      //   clearInterval(this.timer);
+      //   this.timer = null;
+      //   this.showMicroWind = true;
+      // }
 
-      this.timer = setInterval(function () {
-		  
-      }, 1000);
+      // this.timer = setInterval(function () {
+      // }, 1000);
     },
-	date2me(date){
-		return date.replace(/-/g, "/");
-	},
     showWind1(order) {
 
 
@@ -1952,9 +1932,8 @@ loading.close();
         clearInterval(this.timer);
         this.timer = null;
       }
-      //let stamp = Date.parse(new Date())-Date.parse(new Date(that.activeOrder.created_at));
-	  let stamp = Date.parse(new Date())-Date.parse(new Date(this.date2me(that.activeOrder.created_at)));
-	  this.activeOrder.endTime = this.activeOrder.endTime+stamp;
+      let stamp = Date.parse(new Date())-Date.parse(new Date(that.activeOrder.created_at));
+      this.activeOrder.endTime = this.activeOrder.endTime+stamp;
      // console.log('当前活跃订单',that.activeOrder);
       //console.log('当前时间',Date.parse(new Date()));
       //console.log('剩余时间',parseInt((Date.parse(new Date(that.activeOrder.handled_at))- Date.parse(new Date(that.activeOrder.created_at))) / 1000));
@@ -1965,7 +1944,7 @@ loading.close();
           that.timer = null;
           that.activeOrder.status = 2;
           setTimeout(() => {
-            that.getSeconds();
+
             that.$http({
               url: '/api/microtrade/lists',
               method: 'get',
@@ -1986,7 +1965,7 @@ loading.close();
               }
             })
 
-          }, 2000);
+          }, 8000);
         } else {
           that.update(parseInt((that.activeOrder.endTime - Date.parse(new Date())) / 1000), that.activeOrder.seconds);
         }
@@ -2044,26 +2023,8 @@ loading.close();
         this.CountDown = presentTime;
       }, 200);
     },
-	pingcang(id){
-		this.openPing = false;
-		let that = this;
-				this.$http({
-				  url: "/api/" + "lever/islocked",
-				  method: "post",
-				  data: {
-				    id:id
-				  },
-				  headers: {Authorization: localStorage.getItem("token")}
-				}).then(res => {
-				   if(res.data==1 || res.data=="1"){
-					  
-				   }else{
-					   this.pingcang2(id);
-				   }
-				}).catch(error => {
-				});
-	},
-    pingcang2(id) {
+
+    pingcang(id) {
       let that = this;
 
       that.$http({
@@ -2075,12 +2036,12 @@ loading.close();
         headers: {Authorization: localStorage.getItem("token")}
       }).then(res => {
         if (res.data.type === "ok") {
-          that.$toast.success(that.fanyi(res.data.message));
+          that.$toast.success(res.data.message);
           // location.reload();
           that.getListContent();
           that.openPing = false;
         } else {
-          that.$toast.error(that.fanyi(res.data.message));
+          that.$toast.error(res.data.message);
         }
       }).catch(error => {
         console.log(error);
@@ -2100,36 +2061,16 @@ loading.close();
 
         that.openCancel = false;
         if (res.data.type == "ok") {
-          that.$toast.success(that.fanyi(res.data.message));
+          that.$toast.success(res.data.message);
           that.getListContent();
         } else {
-          that.$toast.error(that.fanyi(res.data.message));
+          that.$toast.error(res.data.message);
         }
       })
           .catch(error => {
           });
     },
-	setLoss(){
-		let that = this;
-		that.openSet = false;
-		let id=that.setId
-				this.$http({
-				  url: "/api/" + "lever/islocked",
-				  method: "post",
-				  data: {
-				    id:id
-				  },
-				  headers: {Authorization: localStorage.getItem("token")}
-				}).then(res => {
-				   if(res.data==1 || res.data=="1"){
-				   }else{
-					   this.setLoss2();
-				   }
-				}).catch(error => {
-				});
-		
-	},
-    setLoss2() {
+    setLoss() {
       let that = this;
       this.$http({
         url: "/api/" + "lever/setstop",
@@ -2144,7 +2085,7 @@ loading.close();
           .then(res => {
             if (res.data.type == "ok") {
               that.openSet = false;
-              that.$toast.success(that.fanyi(res.data.message));
+              that.$toast.success(res.data.message);
               for (let i in that.list_content) {
                 if (that.setId == that.list_content[i].id) {
                   that.list_content[i].target_profit_price = that.winPrice;
@@ -2153,7 +2094,7 @@ loading.close();
               }
             } else {
               that.openSet = false;
-              that.$toast.error(that.fanyi(res.data.message));
+              that.$toast.error(res.data.message);
             }
           })
           .catch(error => {

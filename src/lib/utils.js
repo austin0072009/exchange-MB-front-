@@ -5,7 +5,7 @@ let localUtils = {
   trim: function (val) {
     return val.replace(/\s/g, "");
   },
-  host: "https://www.jpex-exchange.com/",
+  host: "https://hange.com/",
   back_api: "http://www.ifti.top:8070/",
   laravel_api: "http://8.210.189.215//api/",
   node_api: "http://8.210.189.215//",

@@ -373,7 +373,9 @@ export default {
     },
     getSwiper() {
       let that = this;
-      this.$http.post("/api/news/list", {"c_id": 5, 'lang': localStorage.getItem('locale')}).then(res => {
+      // this.$http.post("/api/news/list", {"c_id": 5, 'lang': localStorage.getItem('locale')}).then(res => {
+        this.$http.post("/api/news/list", {"c_id": 5, 'lang': 'en'}).then(res => {
+
         if (res.data.type == "ok") {
           let pics = [];
           for (let i = res.data.message.list.length - 1; i >= 0; i--) {

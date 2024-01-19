@@ -668,6 +668,7 @@ export default {
     freezes: "แช่แข็ง",
     conversion: "แปลงเป็น",
     charging: "เงินฝาก",
+    vertification: "Vertification",
     charrecord: "บันทึกการฝากเงิน",
     fstaus: "สถานะการติดตาม",
     view: "มองข้าม",
@@ -1224,6 +1225,9 @@ export default {
     time: "เวลา",
     limit: "ขีดจำกัด",
     price: "ราคาต่อหน่วย",
+    priceorder: "ราคาต่อหน่วย",
+
+    pricedeal: "ราคาสุดท้าย",
     method: "จ่ายเงินทาง",
     total: "ทั้งหมด",
     inwant: "กรุณากรอก",

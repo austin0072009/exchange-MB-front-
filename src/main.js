@@ -103,11 +103,19 @@ import "@/assets/style/common.css";
 /**
  * 配置接口地址和socket地址
  */
-let [bus_host, socket_api, socket_path] = [
-  "https://www.jpex-exchange.com",
-  "wss://www.jpex-exchange.com",
-  "/socket.io/",
-];
+// let [bus_host, socket_api, socket_path] = [
+//   "https://www.jpex-exchange.com",
+//   "wss://www.jpex-exchange.com",
+//   "/socket.io/",
+// ];
+
+let protocol = window.location.protocol;
+let host = window.location.host;
+let bus_host = `${protocol}//${host}`;
+let socket_api = `${protocol === "https:" ? "wss" : "ws"}://${host}`;
+
+let socket_path = "/socket.io/";
+
  if (process.env.NODE_ENV === 'development') {
  	bus_host = "https://www.jpex-exchange.com"; socket_api = "wss://www.jpex-exchange.com";
  }

@@ -671,6 +671,8 @@ export default {
     freezes: "Đông cứng",
     conversion: "Chuyển đổi thành",
     charging: "Tiền gửi",
+    vertification: "Vertification",
+
     charrecord: "Hồ sơ gửi tiền",
     fstaus: "Trạng thái theo dõi",
     view: "Nhìn qua",
@@ -1230,6 +1232,9 @@ export default {
     time: "Thời gian",
     limit: "Giới hạn",
     price: "Đơn giá",
+    priceorder: "Đơn giá",
+
+    pricedeal: "giá niêm yết",
     method: "Cách thanh toán",
     total: "Tổng cộng",
     inwant: "Xin vui lòng nhập",

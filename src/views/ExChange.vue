@@ -79,7 +79,11 @@
                 <mu-text-field :type="priceMode==='shijia'?'text':'number'"
                                v-model="priceMode==='shijia'?bestPrice:price" :readonly="priceMode==='shijia'"
                                :color="tradeMode==='buy'?'success':'error'" help-text=""
-                               suffix="USDT" :label="$t('cuy.price')"></mu-text-field>
+                               suffix="USDT" :label="$t('cuy.price')"
+                                @focus="isEditing = true"
+                                @blur="isEditing = false"
+                               
+                               ></mu-text-field>
               </div>
               <div class="flex all">
                 <mu-text-field :label="$t('td.num')" v-model="number" :color="tradeMode==='buy'?'success':'error'"
@@ -183,6 +187,8 @@
                     </div>
                     <div class="subb">
                       -
+
+
                     </div>
                   </div>
                 </div>
@@ -207,6 +213,7 @@
                   </span>
                 </div>
                 <div class="flex mt5">
+
                   <div class="tall" style="width: 33%">
                     <div class="subtitle">
                       {{ $t('td.price') }}[{{ item.legal_name }}]
@@ -231,6 +238,31 @@
                       {{ item.number }}
                     </div>
                   </div>
+               
+               
+                </div>
+           
+         <div class="flex mt5">
+
+                  <div class="tall" style="width: 33%">
+                    <div class="subtitle">
+                      {{ $t('td.pricedeal') }}[{{ item.legal_name }}]
+                    </div>
+                    <div class="subb">
+                      {{ item.price|numberFixed(2) }}
+                    </div>
+                  </div>
+
+                     <div class="talc" style="width: 33%">
+                    <div class="subtitle">
+                      {{ $t('td.priceorder') }}[{{ item.legal_name }}]
+                    </div>
+                    <div class="subb">
+                      {{ (item.number * item.price) |numberFixed(2) }}
+                    </div>
+                  </div>
+               
+               
                 </div>
                 <mu-divider></mu-divider>
               </div>
@@ -331,7 +363,9 @@ export default {
       openAlert: false,
       dotype: '',
       doid: '',
-      openConfirm:false
+      openConfirm:false,
+      isEditing: false
+
 
     }
   },
@@ -348,10 +382,18 @@ export default {
   },
   watch: {
     priceMode(val) {
+
+      if (!this.isEditing) {
       this.price = this.tradeMode === 'buy' ? this.newData : this.newDataOut;
+
+    }
+  
     },
     tradeMode(val) {
-      this.price = this.tradeMode === 'buy' ? this.newData : this.newDataOut;
+
+      if (!this.isEditing) {
+this.price = this.tradeMode === 'buy' ? this.newData : this.newDataOut;    }
+      
     },
     number(val) {
       this.amount = (this.price * this.number).toFixed(2);
@@ -570,8 +612,10 @@ export default {
             that.newDataOut = outList[0].price;
             if (that.price == 0) {
               if (that.tradeMode === 'buy') {
+                if(!that.isEditing)
                 that.price = that.newData;
               } else {
+                if(!that.isEditing)
                 that.price = that.newDataOut;
               }
             }

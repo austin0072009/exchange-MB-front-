@@ -37,7 +37,7 @@
 			<div class="bold">{{ $t('account.trade') }}</div>
 		  </div>
 		</div>
-		<div @click="$router.push('/trade?mode=1')" class="one" :class="active==='trade'?'active':''">
+		<div @click="$router.push('/trade?mode=2')" class="one" :class="active==='trade'?'active':''">
 		  <div class="aaa">
 			<div class="footicobox">
 			  <img src="../assets/footico/gang0.png" class="i0">

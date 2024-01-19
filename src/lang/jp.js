@@ -239,7 +239,7 @@ export default {
   login: {
     email: "メールアドレス",
     phone: "携帯の登録",
-    welcome: "ログインを歓迎します",
+    welcome: "ログインを歓迎します!",
     account: "アカウント",
     forget: "パスワードを忘れます",
     dont: "登録に移動？",
@@ -1221,6 +1221,8 @@ export default {
     time: "時間",
     limit: "限度額",
     price: "単価",
+    priceorder: "購入単価",
+    pricedeal: "最終価格",
     method: "支払い方式",
     total: "総額",
     inwant: "ご入力の、、、",

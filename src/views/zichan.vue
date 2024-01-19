@@ -7,9 +7,10 @@
 		<div class="zctab">
 			<div class="ul">
 				<div class="li" :class="type=='change'?'cur':''" @click="settab('change')">{{ $t('usercenter.change') }}</div>
-				<div class="li" :class="type=='lever'?'cur':''" @click="settab('lever')">{{ $t('usercenter.lever') }}</div>
-				<!-- <div class="li" :class="type=='legal'?'cur':''" @click="settab('legal')">{{ $t('usercenter.legal') }}</div> -->
-				<div class="li" :class="type=='micro'?'cur':''" @click="settab('micro')">{{ $t('usercenter.second') }}</div>
+				<!-- <div class="li" :class="type=='lever'?'cur':''" @click="settab('lever')">{{ $t('usercenter.lever') }}</div> -->
+				<div class="li" :class="type=='legal'?'cur':''" @click="settab('legal')">{{ $t('usercenter.legal') }}</div>
+				<!-- <div class="li" :class="type=='micro'?'cur':''" @click="settab('micro')">{{ $t('usercenter.second') }}</div> -->
+				<div class="li" :class="type=='micro'?'cur':''" @click="settab('micro')">{{ $t('usercenter.lever') }}</div> 
 			</div>
 		</div>
 		<div class="flex1 overYauto pdlr15">

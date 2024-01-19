@@ -1,14 +1,14 @@
 <template>
   <div class="my-settings myxxbox">
     <div class="home flex flex-column">
-		<div class="myheader">{{$t("header.center")}}</div>
+		<!-- <div class="myheader">{{$t("header.center")}}</div> -->
 		<div class="flex1 overYauto pdlr15">
 			<div class="ge102"></div>
 			<div class="myinfo bghui by10 tl pdlr20 pdtb20 flex flex-center">
 				<img src="../assets/newimg/tx002.png" class="myavatar">
 				<div class="txt">
 				    <div class="name">{{account_num}}</div>
-					<!-- <div class="id">ID：{{addPreZero(user_id)}}</div> -->
+					<div class="id">ID：{{user_id}}</div>
 					<div class="id">{{$t("diy.总资产")}}<em>≈</em><b>${{total.toFixed(2)}}</b></div>
 				</div>
 			</div>

@@ -39,243 +39,244 @@ import ConfirmPage from '@/views/ConfirmPage';
 Vue.use(VueRouter)
 
 const routes = [
-    {
-        path: '/',
-        name: 'home',
-        component: Home,
-        children: [
-            {
-                path: '',
-                name: 'homeContent',
-                component: homeContent,
-                meta: {
-                    title: 'Index'
-                }
-            }
-        ]
-    },
-    {
-        path: '/confirmPage',
-        name: 'confirmPage',
-        component: ConfirmPage,
-        meta:{
-            title: 'Vertification'
-        }
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    },
-    {
-        path: '/login',
-        name: 'Login',
-        component: Login,
+  {
+    path: "/",
+    name: "home",
+    component: Home,
+    children: [
+      {
+        path: "",
+        name: "homeContent",
+        component: homeContent,
         meta: {
-            title: 'Login'
-        }
+          title: "Index",
+        },
+      },
+    ],
+  },
+  {
+    path: "/confirmPage",
+    name: "confirmPage",
+    component: ConfirmPage,
+    meta: {
+      title: "Vertification",
     },
-    {
-        path: '/forget',
-        name: 'Forget',
-        component: Forget,
-        meta: {
-            title: 'Forget Password'
-        }
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+    meta: {
+      title: "Login",
     },
-    {
-        path: '/withdrawal_record',
-        name: 'withdrawal_record',
-        component: withdrawal_record,
-        meta: {
-            title: 'Withdrawal record'
-        }
+  },
+  {
+    path: "/forget",
+    name: "Forget",
+    component: Forget,
+    meta: {
+      title: "Forget Password",
     },
-    {
-        path: '/deposit_record',
-        name: 'deposit_record',
-        component: deposit_record,
-        meta: {
-            title: 'Deposit and withdrawal records'
-        }
+  },
+  {
+    path: "/withdrawal_record",
+    name: "withdrawal_record",
+    component: withdrawal_record,
+    meta: {
+      title: "Withdrawal record",
     },
-    {
-        path: '/logs',
-        name: 'logs',
-        component: logs,
-        meta: {
-            title: 'logs'
-        }
+  },
+  {
+    path: "/deposit_record",
+    name: "deposit_record",
+    component: deposit_record,
+    meta: {
+      title: "Deposit and withdrawal records",
     },
-    {
-        path: '/onlineServer',
-        name: 'onlineServer',
-        component: onlineServer,
-        meta: {
-            title: 'online Server'
-        }
+  },
+  {
+    path: "/logs",
+    name: "logs",
+    component: logs,
+    meta: {
+      title: "logs",
     },
-    {
-        path: '/buy',
-        name: 'Buy',
-        component: BuyUSDT,
-        meta: {
-            title: 'Buy USDT',
-        }
+  },
+  {
+    path: "/onlineServer",
+    name: "onlineServer",
+    component: onlineServer,
+    meta: {
+      title: "online Server",
     },
-    {
-        path: '/detail',
-        name: 'Detail',
-        component: Detail,
-        meta: {
-            title: 'Detail',
-        }
+  },
+  {
+    path: "/buy",
+    name: "Buy",
+    component: BuyUSDT,
+    meta: {
+      title: "Buy USDT",
     },
-    {
-        path: '/register',
-        name: 'Register',
-        component: Register,
-        meta: {
-            title: 'Register'
-        }
+  },
+  {
+    path: "/detail",
+    name: "Detail",
+    component: Detail,
+    meta: {
+      title: "Detail",
     },
-    {
-        path: '/ucenter',
-        name: 'Ucenter',
-        component: Ucenter,
-        meta: {
-            title: 'User Center'
-        }
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
+    meta: {
+      title: "Register",
     },
-    {
-        path: '/exchange',
-        name: 'ExChange',
-        component: ExChange,
-        meta: {
-            title: 'Exchange'
-        }
+  },
+  {
+    path: "/ucenter",
+    name: "Ucenter",
+    component: Ucenter,
+    meta: {
+      title: "User Center",
     },
-    {
-        path: '/quotes',
-        name: 'quotes',
-        component: quotes,
-        meta: {
-            title: 'quotes'
-        }
+  },
+  {
+    path: "/exchange",
+    name: "ExChange",
+    component: ExChange,
+    meta: {
+      title: "Exchange",
     },
-    {
-        path: '/kline',
-        name: "KLine",
-        component: KLine,
-        meta: {
-            title: 'Kline'
-        }
+  },
+  {
+    path: "/quotes",
+    name: "quotes",
+    component: quotes,
+    meta: {
+      title: "quotes",
     },
-    {
-        path: '/my',
-        name: "My",
-        component: My,
-        meta: {
-            title: 'My'
-        }
+  },
+  {
+    path: "/kline",
+    name: "KLine",
+    component: KLine,
+    meta: {
+      title: "Kline",
     },
-    {
-        path: '/zichan',
-        name: "zichan",
-        component: zichan,
-        meta: {
-            title: 'zichan'
-        }
+  },
+  {
+    path: "/my",
+    name: "My",
+    component: My,
+    meta: {
+      title: "My",
     },
-    {
-        path: '/assets',
-        name: "Assets",
-        component: Assets,
-        meta: {
-            title: 'My Assets'
-        }
+  },
+  {
+    path: "/zichan",
+    name: "zichan",
+    component: zichan,
+    meta: {
+      title: "zichan",
     },
-    {
-        path: '/assets2',
-        name: "Assets2",
-        component: Assets2,
-        meta: {
-            title: 'My Assets'
-        }
+  },
+  {
+    path: "/assets",
+    name: "Assets",
+    component: Assets,
+    meta: {
+      title: "My Assets",
     },
-    {
-        path: '/trade',
-        name: "Trade",
-        component: Trade,
-        meta: {
-            title: 'Trade'
-        }
+  },
+  {
+    path: "/assets2",
+    name: "Assets2",
+    component: Assets2,
+    meta: {
+      title: "My Assets",
     },
-    {
-        path: '/trade2',
-        name: "Trade2",
-        component: Trade2,
-        meta: {
-            title: 'Trade'
-        }
+  },
+  {
+    path: "/trade",
+    name: "Trade",
+    component: Trade,
+    meta: {
+      title: "Trade",
     },
-    {
-        path: '/recharge',
-        name: 'Recharge',
-        component: Recharge,
-        meta: {
-            title: 'Recharge'
-        }
+  },
+  {
+    path: "/trade2",
+    name: "Trade2",
+    component: Trade2,
+    meta: {
+      title: "Trade",
     },
-    {
-        path: '/withdrawal',
-        name: 'Withdrawal',
-        component: Withdrawal,
-        meta: {
-            title: 'Withdrawal'
-        }
+  },
+  {
+    path: "/recharge",
+    name: "Recharge",
+    component: Recharge,
+    meta: {
+      title: "Recharge",
     },
-    {
-        path: '/transfer',
-        name: 'Transfer',
-        component: Transfer,
-        meta: {
-            title: 'Wallet Transfer'
-        }
+  },
+  {
+    path: "/withdrawal",
+    name: "Withdrawal",
+    component: Withdrawal,
+    meta: {
+      title: "Withdrawal",
     },
-    {
-        path: '/share',
-        name: 'Share',
-        component: Share,
-        meta: {
-            title: 'Invite Friends'
-        }
+  },
+  {
+    path: "/transfer",
+    name: "Transfer",
+    component: Transfer,
+    meta: {
+      title: "Wallet Transfer",
     },
-    {
-        path: '/notice',
-        name: 'Notice',
-        component: Notice,
-        meta: {
-            title: 'Notice'
-        }
+  },
+  {
+    path: "/share",
+    name: "Share",
+    component: Share,
+    meta: {
+      title: "Invite Friends",
     },
-    {
-        path: '/help',
-        name: 'Help',
-        component: Help,
-        meta: {
-            title: 'Help Center'
-        }
+  },
+  {
+    path: "/notice",
+    name: "Notice",
+    component: Notice,
+    meta: {
+      title: "Notice",
     },
-    {
-        path: '/feedback',
-        name: 'Feedback',
-        component: Feedback,
-        meta: {
-            title: 'Feedback'
-        }
+  },
+  {
+    path: "/help",
+    name: "Help",
+    component: Help,
+    meta: {
+      title: "Help Center",
     },
-   /* {
+  },
+  {
+    path: "/feedback",
+    name: "Feedback",
+    component: Feedback,
+    meta: {
+      title: "Feedback",
+    },
+  },
+  /* {
         path: '/upstart',
         name: 'IEPN',
         component: IEPN,
@@ -283,58 +284,62 @@ const routes = [
             title: 'UpStart'
         }
     },*/
-    {
-        path: '/upstart',
-        name: 'Upstart',
-        component: Upstart,
-        meta: {
-            title: 'Upstart'
-        }
+  {
+    path: "/upstart",
+    name: "Upstart",
+    component: Upstart,
+    meta: {
+      title: "Upstart",
     },
-    {
-        path: '/Uplist',
-        name: 'Uplist',
-        component: Uplist,
-        meta: {
-            title: 'SubscriptionList'
-        }
+  },
+  {
+    path: "/Uplist",
+    name: "Uplist",
+    component: Uplist,
+    meta: {
+      title: "SubscriptionList",
     },
-    {
-        path: '/zhiya',
-        name: 'zhiya',
-        component: zhiya,
-        meta: {
-            title: 'Lock up'
-        }
+  },
+  {
+    path: "/zhiya",
+    name: "zhiya",
+    component: zhiya,
+    meta: {
+      title: "Lock up",
     },
-    {
-        path: '/zhiyaOrder',
-        name: 'zhiyaOrder',
-        component: zhiyaOrder,
-        meta: {
-            title: 'Lock up Order'
-        }
+  },
+  {
+    path: "/zhiyaOrder",
+    name: "zhiyaOrder",
+    component: zhiyaOrder,
+    meta: {
+      title: "Lock up Order",
     },
-    {
-        path: '/onlineService',
-        name: 'onlineService',
-        component: onlineService,
-        meta: {
-            title: 'onlineService'
-        }
+  },
+  {
+    path: "/onlineService",
+    name: "onlineService",
+    component: onlineService,
+    meta: {
+      title: "onlineService",
     },
-    {
-        path: '/imgbn',
-        name: 'imgbn',
-        component: imgbn,
-        meta: {
-            title: 'bn'
-        }
-    }
-]
+  },
+  {
+    path: "/imgbn",
+    name: "imgbn",
+    component: imgbn,
+    meta: {
+      title: "bn",
+    },
+  },
+  {
+    path: "*",
+    redirect: "/",
+  }
+];
 
 const router = new VueRouter({
-    routes
-})
+  routes,
+});
 
 export default router
